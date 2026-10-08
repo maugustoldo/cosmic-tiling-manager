@@ -1049,7 +1049,7 @@ dependencies = [
 
 [[package]]
 name = "cosmic-tiling-manager"
-version = "0.1.0"
+version = "1.0.4"
 dependencies = [
  "libcosmic",
  "rfd 0.14.1",

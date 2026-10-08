@@ -1,6 +1,6 @@
 [Desktop Entry]
 Version=1.0
-Name=COSMIC Tiling Exceptions
+Name=Cosmic Tiling Manager
 Comment=Gerencie as exceções de tiling do COSMIC Desktop (apps flutuantes)
 Exec=cosmic-tiling-manager
 Icon=cosmic-tiling-manager

@@ -9,10 +9,10 @@ use std::fs;
 use std::path::PathBuf;
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
-struct WindowInfo {
-    id: String,
-    app_id: String,
-    title: String,
+pub struct WindowInfo {
+    pub id: String,
+    pub app_id: String,
+    pub title: String,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
@@ -22,14 +22,12 @@ struct WindowRule {
     enabled: bool,
 }
 
+mod wayland;
+
 fn get_open_windows() -> Vec<WindowInfo> {
-    let output = Command::new("cosmic-ext-window-helper")
-        .arg("state")
-        .output();
-        
-    if let Ok(out) = output {
-        if let Ok(json) = String::from_utf8(out.stdout) {
-            return serde_json::from_str(&json).unwrap_or_default();
+    if let Some(state_arc) = wayland::WINDOWS_STATE.get() {
+        if let Ok(wins) = state_arc.lock() {
+            return wins.values().cloned().collect();
         }
     }
     vec![]
@@ -117,7 +115,7 @@ impl Application for TilingApp {
     }
 
     fn subscription(&self) -> cosmic::iced::Subscription<Self::Message> {
-        cosmic::iced::time::every(std::time::Duration::from_secs(3)).map(|_| Message::AutoRefresh)
+        cosmic::iced::time::every(std::time::Duration::from_millis(500)).map(|_| Message::AutoRefresh)
     }
 
     fn update(&mut self, message: Message) -> Task<cosmic::Action<Message>> {
@@ -341,5 +339,6 @@ impl Application for TilingApp {
 }
 
 fn main() -> cosmic::iced::Result {
+    wayland::spawn_listener();
     cosmic::app::run::<TilingApp>(Settings::default(), ())
 }

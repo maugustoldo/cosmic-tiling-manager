@@ -14,32 +14,6 @@
 
 ---
 
-## Requirements
-
-To fetch open windows dynamically, this application communicates with the COSMIC Compositor via the `cosmic-ext-window-helper` script.
-
-### 1. Install `cosmic-ext-window-helper`
-You must install the helper script via `pipx` before using this application:
-
-**Ubuntu / Pop!_OS:**
-```bash
-sudo apt update
-sudo apt install pipx
-pipx install cosmic-ext-window-helper
-pipx ensurepath
-```
-
-**Fedora:**
-```bash
-sudo dnf install pipx
-pipx install cosmic-ext-window-helper
-pipx ensurepath
-```
-
-*(Note: You might need to restart your terminal or log out/in for the pipx path to be recognized globally).*
-
----
-
 ## Installation
 
 Go to the [Releases](https://github.com/maugustoldo/cosmic-tiling-manager/releases) page and download the installer that matches your system:

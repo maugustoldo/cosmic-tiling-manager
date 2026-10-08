@@ -57,7 +57,7 @@ If you have a complex set of rules and want to back them up or share them with a
 
 ---
 
-## 🏗️ Building from source
+## Building from source
 
 Ensure you have Rust and the COSMIC development libraries installed (Wayland, xkbcommon).
 ```bash

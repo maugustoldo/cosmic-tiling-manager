@@ -1,15 +1,15 @@
-# COSMIC Tiling Exceptions Manager
+# Cosmic Tiling Manager
 
-**COSMIC Tiling Exceptions Manager** is a native GUI utility built with `libcosmic` specifically designed for the COSMIC Desktop Environment (Pop!_OS). It provides an elegant way to manage window auto-tiling exceptions, allowing you to easily configure specific applications to bypass Wayland's auto-tiling mechanism and open in floating mode automatically.
+**Cosmic Tiling Manager** is a native GUI utility built with `libcosmic` specifically designed for the COSMIC Desktop Environment (Pop!_OS). It provides an elegant way to manage window auto-tiling exceptions, allowing you to easily configure specific applications to bypass Wayland's auto-tiling mechanism and open in floating mode automatically.
 
-![COSMIC Tiling Exceptions Manager](assets/screenshot.png)
+![Cosmic Tiling Manager](assets/screenshot.png)
 
 ## Features
 
 * **Native COSMIC integration:** Built with the official `libcosmic` library, adhering to the system's design language, themes (dark/light), and aesthetics.
-* **Live Window Detection:** Instantly fetches all currently open windows and their `app_id`s, removing the guesswork of finding the correct identifier for an application.
+* **Intelligent Auto-Refresh:** Instantly and silently fetches all currently open windows and their `app_id`s in the background, without requiring manual reloads.
 * **One-Click Exceptions:** Transform any open window into a floating exception with a single click.
-* **Search & Filter:** Easily find active rules in your exceptions list using the built-in search bar.
+* **Toggle Rules:** Temporarily enable or disable floating rules using native switches without losing your configuration.
 * **Backup Management:** Export and import your entire list of rules (`.ron` format) to easily sync your workspace settings across multiple machines.
 
 ---
@@ -20,9 +20,18 @@ To fetch open windows dynamically, this application communicates with the COSMIC
 
 ### 1. Install `cosmic-ext-window-helper`
 You must install the helper script via `pipx` before using this application:
+
+**Ubuntu / Pop!_OS:**
 ```bash
 sudo apt update
 sudo apt install pipx
+pipx install cosmic-ext-window-helper
+pipx ensurepath
+```
+
+**Fedora:**
+```bash
+sudo dnf install pipx
 pipx install cosmic-ext-window-helper
 pipx ensurepath
 ```
@@ -33,7 +42,7 @@ pipx ensurepath
 
 ## Installation
 
-Go to the [Releases](https://github.com/maugustolo/cosmic-tiling-manager/releases) page and download the installer that matches your system:
+Go to the [Releases](https://github.com/maugustoldo/cosmic-tiling-manager/releases) page and download the installer that matches your system:
 
 ### Debian / Ubuntu / Pop!_OS (`.deb`)
 ```bash
@@ -42,11 +51,11 @@ sudo apt install ./cosmic-tiling-manager_*.deb
 
 ### Fedora (`.rpm`)
 ```bash
-sudo dnf install ./cosmic-tiling-manager_*.rpm
+sudo dnf install ./cosmic-tiling-manager-*.rpm
 ```
 
-### Universal (`.AppImage`)
-Simply make it executable and run:
+### Fedora Atomic / Universal (`.AppImage`)
+Simply make it executable and run (perfect for immutable systems as it avoids layering conflicts):
 ```bash
 chmod +x cosmic-tiling-manager-x86_64.AppImage
 ./cosmic-tiling-manager-x86_64.AppImage
@@ -58,13 +67,13 @@ chmod +x cosmic-tiling-manager-x86_64.AppImage
 
 ### Adding an Exception (Making an app float)
 1. Open the application you want to make floating (e.g., Calculator, System Settings).
-2. Open the **COSMIC Tiling Exceptions Manager**.
-3. Click the **Refresh Windows** button to load all currently active windows on the left panel ("Open Windows").
+2. Open the **Cosmic Tiling Manager**.
+3. Your active windows will automatically appear on the left panel ("Open Windows").
 4. Find the application in the list and click **Float**.
 5. It will immediately be moved to the "Active Exceptions" column on the right. The next time you open this app, it will bypass tiling and float!
 
-### Removing an Exception
-To make an application tile normally again, simply find it in the "Active Exceptions" column and click **Remove**.
+### Managing Exceptions
+To temporarily disable a rule, click the native **Switch (Toggle)** next to the app in the "Active Exceptions" column. To delete the rule entirely, click the **Trash** icon.
 
 ### Exporting and Importing Backups
 If you have a complex set of rules and want to back them up or share them with another machine:
@@ -78,7 +87,7 @@ If you have a complex set of rules and want to back them up or share them with a
 
 Ensure you have Rust and the COSMIC development libraries installed (Wayland, xkbcommon).
 ```bash
-git clone https://github.com/maugustolo/cosmic-tiling-manager.git
+git clone https://github.com/maugustoldo/cosmic-tiling-manager.git
 cd cosmic-tiling-manager
 cargo build --release
 ```

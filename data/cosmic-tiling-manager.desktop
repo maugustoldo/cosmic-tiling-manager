@@ -7,4 +7,4 @@ Icon=cosmic-tiling-manager
 Terminal=false
 Type=Application
 Categories=Settings;System;DesktopSettings;
-StartupWMClass=CosmicTilingManager
+StartupWMClass=com.system76.CosmicTilingManager

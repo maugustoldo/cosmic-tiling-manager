@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Outer Rim (COSMIC Style Gray Bezel) -->
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#A5ADBA" />
+  
+  <!-- Inner Background (Dark Navy) -->
+  <rect x="14" y="14" width="100" height="100" rx="18" fill="#1C2534" />
+  
+  <!-- Tiled Window 1 (Left) -->
+  <rect x="24" y="24" width="36" height="80" rx="6" fill="#34425A" />
+  
+  <!-- Tiled Window 2 (Top Right) -->
+  <rect x="68" y="24" width="36" height="36" rx="6" fill="#34425A" />
+  
+  <!-- Tiled Window 3 (Bottom Right) -->
+  <rect x="68" y="68" width="36" height="36" rx="6" fill="#34425A" />
+  
+  <!-- Floating Window Drop Shadow -->
+  <rect x="54" y="48" width="56" height="40" rx="6" fill="#000000" opacity="0.4" />
+  
+  <!-- Floating Window Base (Teal) -->
+  <rect x="50" y="44" width="56" height="40" rx="6" fill="#48C5D4" />
+  
+  <!-- Floating Window Titlebar (Darker Teal) -->
+  <path d="M 50 50 Q 50 44 56 44 L 100 44 Q 106 44 106 50 L 106 54 L 50 54 Z" fill="#2A9CA9" />
+  
+  <!-- Window Controls (Small Dots on Titlebar) -->
+  <circle cx="56" cy="49" r="2.5" fill="#1C2534" opacity="0.5" />
+  <circle cx="64" cy="49" r="2.5" fill="#1C2534" opacity="0.5" />
+</svg>

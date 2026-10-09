@@ -11,20 +11,20 @@ permissions:
 jobs:
   build:
     name: Build & Package
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
       - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libxkbcommon-dev libwayland-dev libegl1-mesa-dev rpm
+          sudo apt-get install -y libxkbcommon-dev libwayland-dev libegl1-mesa-dev rpm libfuse2
 
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install Packaging Tools
-        run: cargo install cargo-deb cargo-generate-rpm cargo-appimage
+        run: cargo install cargo-deb cargo-generate-rpm libfuse2 cargo-appimage
 
       - name: Build Release
         run: cargo build --release
@@ -33,7 +33,7 @@ jobs:
         run: cargo deb
 
       - name: Generate RPM
-        run: cargo generate-rpm
+        run: cargo generate-rpm libfuse2
 
       - name: Generate AppImage
         run: |
@@ -48,7 +48,7 @@ jobs:
         with:
           files: |
             target/debian/*.deb
-            target/generate-rpm/*.rpm
+            target/generate-rpm libfuse2/*.rpm libfuse2
             *.AppImage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

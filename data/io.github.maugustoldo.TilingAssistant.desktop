@@ -1,9 +1,9 @@
 [Desktop Entry]
 Version=1.0
-Name=Cosmic Tiling Manager
+Name=Tiling Assistant
 Comment=Gerencie as exceções de tiling do COSMIC Desktop (apps flutuantes)
-Exec=cosmic-tiling-manager
-Icon=cosmic-tiling-manager
+Exec=tiling-assistant
+Icon=io.github.maugustoldo.TilingAssistant
 Terminal=false
 Type=Application
 Categories=Settings;System;DesktopSettings;

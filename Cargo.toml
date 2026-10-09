@@ -1,6 +1,6 @@
 [package]
-name = "cosmic-tiling-manager"
-version = "1.1.0"
+name = "tiling-assistant"
+version = "1.1.1"
 edition = "2024"
 description = "Manage COSMIC tiling exceptions"
 license = "MIT"
@@ -22,14 +22,14 @@ depends = "$auto"
 section = "utility"
 priority = "optional"
 assets = [
-    ["target/release/cosmic-tiling-manager", "usr/bin/", "755"],
-    ["data/cosmic-tiling-manager.desktop", "var/home/maugustoldo/.local/share/applications/", "644"],
-    ["data/cosmic-tiling-manager.svg", "var/home/maugustoldo/.local/share/icons/hicolor/scalable/apps/", "644"]
+    ["target/release/tiling-assistant", "usr/bin/", "755"],
+    ["data/io.github.maugustoldo.TilingAssistant.desktop", "usr/share/applications/", "644"],
+    ["data/io.github.maugustoldo.TilingAssistant.svg", "usr/share/icons/hicolor/scalable/apps/", "644"]
 ]
 
 [package.metadata.generate-rpm]
 assets = [
-    { source = "target/release/cosmic-tiling-manager", dest = "/usr/bin/cosmic-tiling-manager", mode = "755" },
-    { source = "data/cosmic-tiling-manager.desktop", dest = "/var/home/maugustoldo/.local/share/applications/cosmic-tiling-manager.desktop", mode = "644" },
-    { source = "data/cosmic-tiling-manager.svg", dest = "/var/home/maugustoldo/.local/share/icons/hicolor/scalable/apps/cosmic-tiling-manager.svg", mode = "644" }
+    { source = "target/release/tiling-assistant", dest = "/usr/bin/tiling-assistant", mode = "755" },
+    { source = "data/io.github.maugustoldo.TilingAssistant.desktop", dest = "/usr/share/applications/io.github.maugustoldo.TilingAssistant.desktop", mode = "644" },
+    { source = "data/io.github.maugustoldo.TilingAssistant.svg", dest = "/usr/share/icons/hicolor/scalable/apps/io.github.maugustoldo.TilingAssistant.svg", mode = "644" }
 ]

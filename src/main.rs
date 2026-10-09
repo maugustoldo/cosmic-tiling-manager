@@ -93,7 +93,7 @@ impl Application for TilingApp {
     type Message = Message;
     type Flags = ();
 
-    const APP_ID: &'static str = "com.system76.CosmicTilingManager";
+    const APP_ID: &'static str = "io.github.maugustoldo.TilingAssistant";
 
     fn core(&self) -> &Core { &self.core }
     fn core_mut(&mut self) -> &mut Core { &mut self.core }
@@ -307,8 +307,8 @@ impl Application for TilingApp {
             .push(right_panel);
             
         let header_text = Column::new().spacing(5)
-            .push(text("COSMIC Tiling Exceptions Manager").size(32))
-            .push(text("Manage applications that should bypass the COSMIC tiling system and open in floating mode.").size(16));
+            .push(text("Tiling Assistant").size(32))
+            .push(text("Manage applications that should bypass the auto-tiling system and open in floating mode.").size(16));
             
         let search_box = text_input("Search active rules...", &self.search_query)
             .on_input(Message::SearchChanged)

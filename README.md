@@ -1,8 +1,8 @@
-# Cosmic Tiling Manager
+# Tiling Assistant
 
-**Cosmic Tiling Manager** is a native GUI utility built with `libcosmic` specifically designed for the COSMIC Desktop Environment (Pop!_OS). It provides an elegant way to manage window auto-tiling exceptions, allowing you to easily configure specific applications to bypass Wayland's auto-tiling mechanism and open in floating mode automatically.
+**Tiling Assistant** is a native GUI utility built with `libcosmic` specifically designed for the COSMIC Desktop Environment (Pop!_OS). It provides an elegant way to manage window auto-tiling exceptions, allowing you to easily configure specific applications to bypass Wayland's auto-tiling mechanism and open in floating mode automatically.
 
-![Cosmic Tiling Manager](assets/screenshot.png)
+![Tiling Assistant](assets/screenshot.png)
 
 ## Features
 
@@ -16,23 +16,23 @@
 
 ## Installation
 
-Go to the [Releases](https://github.com/maugustoldo/cosmic-tiling-manager/releases) page and download the installer that matches your system:
+Go to the [Releases](https://github.com/maugustoldo/tiling-assistant/releases) page and download the installer that matches your system:
 
 ### Debian / Ubuntu / Pop!_OS (`.deb`)
 ```bash
-sudo apt install ./cosmic-tiling-manager_*.deb
+sudo apt install ./tiling-assistant_*.deb
 ```
 
 ### Fedora (`.rpm`)
 ```bash
-sudo dnf install ./cosmic-tiling-manager-*.rpm
+sudo dnf install ./tiling-assistant-*.rpm
 ```
 
 ### Fedora Atomic / Universal (`.AppImage`)
 Simply make it executable and run (perfect for immutable systems as it avoids layering conflicts):
 ```bash
-chmod +x cosmic-tiling-manager-x86_64.AppImage
-./cosmic-tiling-manager-x86_64.AppImage
+chmod +x tiling-assistant-x86_64.AppImage
+./tiling-assistant-x86_64.AppImage
 ```
 
 ---
@@ -41,7 +41,7 @@ chmod +x cosmic-tiling-manager-x86_64.AppImage
 
 ### Adding an Exception (Making an app float)
 1. Open the application you want to make floating (e.g., Calculator, System Settings).
-2. Open the **Cosmic Tiling Manager**.
+2. Open the **Tiling Assistant**.
 3. Your active windows will automatically appear on the left panel ("Open Windows").
 4. Find the application in the list and click **Float**.
 5. It will immediately be moved to the "Active Exceptions" column on the right. The next time you open this app, it will bypass tiling and float!
@@ -61,7 +61,7 @@ If you have a complex set of rules and want to back them up or share them with a
 
 Ensure you have Rust and the COSMIC development libraries installed (Wayland, xkbcommon).
 ```bash
-git clone https://github.com/maugustoldo/cosmic-tiling-manager.git
-cd cosmic-tiling-manager
+git clone https://github.com/maugustoldo/tiling-assistant.git
+cd tiling-assistant
 cargo build --release
 ```

@@ -7,4 +7,4 @@ Icon=io.github.maugustoldo.TilingAssistant
 Terminal=false
 Type=Application
 Categories=Settings;System;DesktopSettings;
-StartupWMClass=com.system76.CosmicTilingManager
+StartupWMClass=io.github.maugustoldo.TilingAssistant
